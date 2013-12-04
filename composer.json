@@ -17,9 +17,9 @@
 
     "require": {
         "php": ">=5.3.7",
-        "illuminate/support": "~4",
-        "illuminate/filesystem": "~4",
-        "symfony/translation": "2.5.*"
+        "illuminate/support": "~4.0",
+        "illuminate/filesystem": "~4.0",
+        "symfony/translation": "~2.4"
     },
 
     "require-dev": {
