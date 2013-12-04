@@ -80,7 +80,7 @@ class GlottosTest extends PHPUnit_Framework_TestCase {
 		$this->translatedChoice = "$this->translatedChoiceSingular|$this->translatedChoicePlural";
 		$this->translatedChoiceSentence = Sentence::makeTranslation($this->choice, $this->translatedChoice, $this->domain, $this->mode, $this->config);
 
-		$this->app = m::mock('Illuminate\Console\Application');
+		$this->app = 'application';
 
 		$this->glottos = new Glottos(
 			$this->config,
