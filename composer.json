@@ -1,0 +1,54 @@
+{
+    "name": "pragmarx/glottos",
+
+    "description": "PHP 5.3+ Translation/Localization System",
+
+    "keywords": ["translation", "localization", "laravel"],
+
+    "license": "BSD-3-Clause",
+
+    "authors": [
+        {
+            "name": "Antonio Carlos Ribeiro",
+            "email": "acr@antoniocarlosribeiro.com",
+            "role": "Creator & Designer"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.7",
+        "illuminate/support": "~4",
+        "illuminate/filesystem": "~4",
+        "symfony/translation": "2.5.*"
+    },
+
+    "require-dev": {
+        "mockery/mockery": "0.8.0"
+    },
+
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/PragmaRX"
+        ],
+        "psr-0": {
+            "PragmaRX\\Glottos": "src/"
+        },
+        "files": [
+            "src/PragmaRX/Support/helpers.php"
+        ]
+    },
+
+    "extra": {
+            "component": "package",
+            "frameworks": ["Laravel 4"],
+            "versions": {
+                    "1": "master"
+            },
+            "branch-alias": {
+                    "dev-master": "1.0-dev"
+            }
+    },
+
+    "minimum-stability": "dev"
+}
