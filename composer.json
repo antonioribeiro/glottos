@@ -1,7 +1,7 @@
 {
     "name": "pragmarx/glottos",
 
-    "description": "An PHP 5.3+ Online Translation/Localization System",
+    "description": "A PHP 5.3+ Online Translation/Localization System",
 
     "keywords": ["translation", "localization", "laravel"],
 
