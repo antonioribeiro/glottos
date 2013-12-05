@@ -76,6 +76,20 @@ Glottos::choice('Photography|Photographies', 100, array(), 'pt_BR')
 
 The idea behind this package is very simple: you need your web app to become multi-language fast so you better translate it all online, with some help from co-workers or the community.
 
+### Schema
+
+Basically Glottos will create and sometimes populate a bunch of tables for
+
+- Countries - 127
+- Languages - 129
+- Locales - 323 - Each one with its proper regional language name
+- Messages - (is stores hashes of the primary message)
+- Translations - one row for each message x locale
+
+Here's a view of how Laravel's messages are stored in the Admin site:
+
+![Laravel site messages in Glottos](http://puu.sh/5CWYM.png)
+
 ### Installation
 
 #### Requirements
