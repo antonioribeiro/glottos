@@ -91,7 +91,7 @@ class SentenceBag implements Countable {
 
 		foreach($sentences as $sentence)
 		{
-			if (empty(trim($sentence)))
+			if (trim($sentence) == '')
 			{
 				$keep = $sentence;
 			}
