@@ -131,6 +131,12 @@ php artisan glottos:import
 And you should be good to go. Enjoy!
 
 <a name="about-author"/>
+
+### TODO
+
+- Add a real cache layer to it.
+- Add more frameworks and data access drivers.
+
 ### Author
 
 Antonio Carlos Ribeiro - <acr@antoniocarlosribeiro.com> - <http://twitter.com/iantonioribeiro>
