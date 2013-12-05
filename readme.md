@@ -97,6 +97,10 @@ Here's a view of how Laravel's messages are stored in the Admin site:
 - Any flavour of PHP 5.3.7+ should do
 - [optional] PHPUnit to execute the test suite
 
+#### Frameworks
+
+Since Glottos depends on data layer it is a Laravel 4.x ready package, but it was coded to be as much agnostic as possible, so you can create new drivers and use it on your own frameworks. You can even send me PRs to add them to the main code.
+
 #### With Composer
 
 `composer require pragmarx/glottos dev-master`
