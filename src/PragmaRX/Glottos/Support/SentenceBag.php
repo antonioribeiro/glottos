@@ -35,8 +35,6 @@ class SentenceBag implements Countable {
 
 	private $suffix;
 
-	private $delimiter;
-
 	private $config;
 
 	/**
@@ -45,10 +43,8 @@ class SentenceBag implements Countable {
 	 * @param  array  $sentences
 	 * @return void
 	 */
-	public function __construct(Config $config, $paragraph = null, $delimiter = '.', $domain = null)
+	public function __construct(Config $config, $paragraph = null, $domain = null)
 	{
-		$this->delimiter = $delimiter;
-
 		$this->config = $config;
 
 		$this->parseParagraph($paragraph, $domain);
@@ -91,7 +87,6 @@ class SentenceBag implements Countable {
 		$sentences = preg_split("/((?<=[.?!]))(\s+(?=[a-z]))/i", $paragraph, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 
 		// Had to tweak this, I need a Regex Guru!
-		// 
 		$keep = '';
 
 		foreach($sentences as $sentence)
@@ -213,29 +208,6 @@ class SentenceBag implements Countable {
 	}
 
 	/**
-	 * Get the default sentence delimiter.
-	 *
-	 * @return string
-	 */
-	public function getDelimiter()
-	{
-		return $this->delimiter;
-	}
-
-	/**
-	 * Set the default sentence delimiter.
-	 *
-	 * @param  string  $delimiter
-	 * @return \PragmaRX\Support\SentenceBag
-	 */
-	public function setDelimiter($delimiter)
-	{
-		$this->delimiter = $delimiter;
-
-		return $this;
-	}
-
-	/**
 	 * Determine if the sentence bag has any sentences.
 	 *
 	 * @return bool
@@ -295,6 +267,12 @@ class SentenceBag implements Countable {
 		return $this->prefix . $this->implodeSentences($property) . $this->suffix;
 	}
 
+	/**
+	 * Join all sentences to recreate the paragraph
+	 * 
+	 * @param  string $property 
+	 * @return string           
+	 */
 	public function implodeSentences($property)
 	{
 		$paragraph = '';
