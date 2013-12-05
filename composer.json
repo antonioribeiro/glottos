@@ -5,7 +5,7 @@
 
     "keywords": ["translation", "localization", "laravel"],
 
-    "license": "BSD-3-Clause",
+    "license": "MIT",
 
     "authors": [
         {
