@@ -49,7 +49,7 @@ class Config {
 	 */
 	public function get($key, $default = null)
 	{
-		if($this->isAppConfig)
+		if ($this->isAppConfig)
 		{
 			return $this->app['config']["pragmarx/glottos::$key"]; // is there a better way than hard coding this?
 		}

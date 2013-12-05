@@ -32,7 +32,7 @@ class Message extends MessageBase implements MessageInterface {
 	{
 		$cacheKey = __CLASS__.__FUNCTION__.$sentence->getHash();
 
-		if( ! $cached = $model = $this->cache->get($cacheKey))
+		if ( ! $cached = $model = $this->cache->get($cacheKey))
 		{
 			$model = $this->model
 							->where('hash', $sentence->getHash())
@@ -46,7 +46,7 @@ class Message extends MessageBase implements MessageInterface {
 			$model = $this->model->create(['hash' => $sentence->getHash(), 'key' => $key]);
 		}
 
-		if( ! $cached )
+		if ( ! $cached )
 		{
 			$this->cache->put($cacheKey, $model);
 		}

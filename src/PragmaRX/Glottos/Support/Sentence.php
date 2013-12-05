@@ -164,13 +164,13 @@ class Sentence {
 	 */
 	public function generateDomain($domain)
 	{
-		if($domain)
+		if ($domain)
 		{
 			$this->setDomain($domain);
 		}
 		else
 		{
-			if($this->config)
+			if ($this->config)
 			{
 				$this->setDomain($this->config->get('default_domain'));
 			}
@@ -224,7 +224,7 @@ class Sentence {
 	{
 		preg_match("/^(natural|key)::(.*)/", $sentence, $matches);
 
-		if(count($matches) == 3)
+		if (count($matches) == 3)
 		{
 			$this->mode = new Mode($matches[1]);
 			$sentence = $matches[2];

@@ -60,7 +60,7 @@ class SentenceBag implements Countable {
 	{
 		$this->clear();
 
-		if(! empty(trim($paragraph)))
+		if (! empty(trim($paragraph)))
 		{
 			if (is_string($paragraph))
 			{
@@ -91,7 +91,7 @@ class SentenceBag implements Countable {
 
 		foreach($sentences as $sentence)
 		{
-			if(empty(trim($sentence)))
+			if (empty(trim($sentence)))
 			{
 				$keep = $sentence;
 			}

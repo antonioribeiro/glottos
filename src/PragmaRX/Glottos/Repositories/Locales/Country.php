@@ -30,12 +30,12 @@ class Country extends LocaleBase implements CountryInterface {
 	{
 		$cacheKey = __CLASS__.__FUNCTION__.$country;
 
-		if( ! $cached = $model = $this->cache->get($cacheKey))
+		if ( ! $cached = $model = $this->cache->get($cacheKey))
 		{
 			$model = $this->model->find($country);
 		}
 	
-		if( ! $cached && $model )
+		if ( ! $cached && $model )
 		{
 			$this->cache->put($cacheKey, $model);
 		}

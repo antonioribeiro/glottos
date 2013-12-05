@@ -96,12 +96,12 @@ class DataRepository implements DataRepositoryInterface {
 
 		$translation = $this->translation->find($sentence, $locale);
 
-		if($translation->translationFound && $this->config->get('debug'))
+		if ($translation->translationFound && $this->config->get('debug'))
 		{
 			$translation->setTranslation(str_repeat($this->config->get('debug_character'), strlen($translation->getTranslation())));
 		}
 
-		if(! $translation->translationFound && $sentence->getMode() == 'natural' && $locale->is($this->getDefaultLocale()))
+		if (! $translation->translationFound && $sentence->getMode() == 'natural' && $locale->is($this->getDefaultLocale()))
 		{
 			$translation = $this->addTranslation($sentence, $this->getDefaultLocale());
 		}
@@ -292,7 +292,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function import($app, $path, $domain, $mode)
 	{
-		if( ! $path)
+		if ( ! $path)
 		{
 			$path = $app['path.base'].'/app/lang';
 		}
@@ -334,7 +334,7 @@ class DataRepository implements DataRepositoryInterface {
 			{
 				foreach($values as $key => $value)
 				{
-					if($this->addKey($group, $key, $value, $domain, $locale, $mode))
+					if ($this->addKey($group, $key, $value, $domain, $locale, $mode))
 					{
 						$imported++;
 					}
@@ -367,7 +367,7 @@ class DataRepository implements DataRepositoryInterface {
 
 		$translation = $this->findTranslation($translation, $locale);
 
-		if(! $translation->translationFound)
+		if (! $translation->translationFound)
 		{
 			$this->addTranslation($translation, $locale);
 

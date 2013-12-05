@@ -34,7 +34,7 @@ class SentenceParser {
 		$prefix = '';
 		$suffix = '';
 
-		if(is_null($config))
+		if (is_null($config))
 		{
 			return false;
 		}

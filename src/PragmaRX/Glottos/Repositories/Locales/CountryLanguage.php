@@ -32,7 +32,7 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 	{
 		$cacheKey = __CLASS__.__FUNCTION__.$locale->getLanguage().$locale->getCountry();
 
-		if( ! $cached = $model = $this->cache->get($cacheKey))
+		if ( ! $cached = $model = $this->cache->get($cacheKey))
 		{
 			$model = $this->model
 							->with('language')
@@ -43,7 +43,7 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 
 		}
 	
-		if( ! $cached && $model )
+		if ( ! $cached && $model )
 		{
 			$this->cache->put($cacheKey, $model);
 		}
@@ -61,13 +61,13 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 	{
 		$cacheKey = __CLASS__.__FUNCTION__.'id'.$id;
 
-		if( ! $cached = $model = $this->cache->get($cacheKey))
+		if ( ! $cached = $model = $this->cache->get($cacheKey))
 		{
 			$model = $this->model->find($id);
 
 		}
 	
-		if( ! $cached && $model )
+		if ( ! $cached && $model )
 		{
 			$this->cache->put($cacheKey, $model);
 		}
@@ -102,7 +102,7 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 				->orderBy('enabled', 'desc')
 				->orderBy('regional_name');
 
-		if($column)
+		if ($column)
 		{
 			$rows->where($column, $operand, $value);
 		}
@@ -119,7 +119,7 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 	 */
 	public function enableDisableLanguage($id, $enable)
 	{
-		if($language = $this->findById($id))
+		if ($language = $this->findById($id))
 		{
 			$language->enabled = $enable;
 

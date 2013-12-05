@@ -500,7 +500,7 @@ class GlottosTableSeeds extends Migration {
 
 		foreach($glottos_languages_rows as $language)
 		{
-			if(! DB::table('glottos_countries_languages')->where('language_id', $language['id'])->where('country_id', '')->get())
+			if (! DB::table('glottos_countries_languages')->where('language_id', $language['id'])->where('country_id', '')->get())
 			{
 				DB::table('glottos_countries_languages')->insert(
 													array(

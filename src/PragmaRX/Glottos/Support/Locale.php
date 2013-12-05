@@ -202,7 +202,7 @@ class Locale
 			}
 		}
 
-		if(empty($locale))
+		if (empty($locale))
 		{
 			$locale = new Locale();
 		}

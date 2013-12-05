@@ -416,7 +416,7 @@ class Glottos
 
 		$translation = $this->findTranslation($translation, $locale);
 
-		if(! $translation->translationFound)
+		if (! $translation->translationFound)
 		{
 			return $this->dataRepository->addTranslation($translation, $locale);
 		}
@@ -558,7 +558,7 @@ class Glottos
 	 */
 	public function getPrimaryLocale()
 	{
-		if( ! $this->primaryLocale)
+		if ( ! $this->primaryLocale)
 		{
 			$this->primaryLocale = $this->getDefaultLocale();
 		}
@@ -573,7 +573,7 @@ class Glottos
 	 */
 	public function getSecondaryLocale()
 	{
-		if( ! $this->secondaryLocale)
+		if ( ! $this->secondaryLocale)
 		{
 			$this->secondaryLocale = $this->dataRepository->guessSecondaryLocale($this->getPrimaryLocale());
 		}

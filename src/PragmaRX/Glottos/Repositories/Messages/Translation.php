@@ -34,7 +34,7 @@ class Translation extends MessageBase implements TranslationInterface {
 	{
 		$cacheKey = __CLASS__.__FUNCTION__.$sentence->getId().$locale->getLanguage().$locale->getCountry();
 
-		if( ! $cached = $model = $this->cache->get($cacheKey))
+		if ( ! $cached = $model = $this->cache->get($cacheKey))
 		{
 			$model = $this->model
 						->with('message')
@@ -57,7 +57,7 @@ class Translation extends MessageBase implements TranslationInterface {
 			$sentence->setTranslation($model->translation);
 		}
 
-		if( ! $cached )
+		if ( ! $cached )
 		{
 			$this->cache->put($cacheKey, $model);
 		}
@@ -158,7 +158,7 @@ class Translation extends MessageBase implements TranslationInterface {
 	{
 		$model = $this->findById($message, $locale);
 
-		if(! $model)
+		if (! $model)
 		{
 			$translation = Sentence::makeTranslation($translatedMessage, $translatedMessage, $domain, $mode);
 
@@ -196,7 +196,7 @@ class Translation extends MessageBase implements TranslationInterface {
 
 		$rows = $db->select($db->raw($query));
 
-		if($rows)
+		if ($rows)
 		{
 			$model = $this->model
 						->with('message')			

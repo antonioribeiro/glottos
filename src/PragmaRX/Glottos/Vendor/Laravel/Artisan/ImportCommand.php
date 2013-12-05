@@ -39,7 +39,7 @@ class ImportCommand extends Command {
 	{
 		$imported = $this->laravel->glottos->import($this->laravel, $this->option('path'));
 
-		if(is_null($imported)) $imported = 0;
+		if (is_null($imported)) $imported = 0;
 
 		$this->info("$imported messages imported.");
 	}

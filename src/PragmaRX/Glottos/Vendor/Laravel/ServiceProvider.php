@@ -43,7 +43,7 @@ class ServiceProvider extends IlluminateServiceProvider {
 	{
 		$this->package('pragmarx/glottos', 'pragmarx/glottos', __DIR__.'/../../../..');
 
-		if( $this->getConfig('create_glottos_alias') )
+		if ( $this->getConfig('create_glottos_alias') )
 		{
 			IlluminateAliasLoader::getInstance()->alias($this->getConfig('glottos_alias'), 'PragmaRX\Glottos\Vendor\Laravel\Facades\Glottos');
 		}
