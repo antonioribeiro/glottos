@@ -2,7 +2,7 @@
 
 #### An Online Translation/Localization System for Laravel Web Artisans
 
-Check [Glottos Admin](https://github.com/antonioribeiro/glottosAdmin), a full featured site translation system built with Glottos.
+##### Check out [Glottos Admin](https://github.com/antonioribeiro/glottosAdmin), a full featured site translation system built with Glottos.
 
 A quick overview of what you are able to do with it:
 
