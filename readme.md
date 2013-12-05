@@ -1,5 +1,7 @@
 # Glottos 
 
+[![Latest Stable Version](https://poser.pugx.org/pragmarx/glottos/v/stable.png)](https://packagist.org/packages/pragmarx/glottos) [![Build Status](https://travis-ci.org/antonioribeiro/glottos.png)](https://travis-ci.org/antonioribeiro/glottos)
+
 #### An Online Translation/Localization System for Laravel Web Artisans
 
 ##### Check out [Glottos Admin](https://github.com/antonioribeiro/glottosAdmin), a full featured site translation system built with Glottos.
