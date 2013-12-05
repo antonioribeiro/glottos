@@ -119,7 +119,7 @@ Once this operation completes, add the service provider to your app/config/app.p
 Migrate Glottos tables:
 
 ```
-php artisan migrate --env=development --package=pragmarx/glottos
+php artisan migrate --package=pragmarx/glottos
 ```
 
 Import your current language files:
