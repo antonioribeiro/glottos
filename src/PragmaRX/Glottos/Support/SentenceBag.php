@@ -64,7 +64,7 @@ class SentenceBag implements Countable {
 	{
 		$this->clear();
 
-		if(! empty($paragraph))
+		if(! empty(trim($paragraph)))
 		{
 			if (is_string($paragraph))
 			{
@@ -88,7 +88,26 @@ class SentenceBag implements Countable {
 	{
 		$paragraph = $this->parseRemovePrefixAndSuffix($paragraph);
 
-		return explode($this->delimiter, $paragraph);
+		$sentences = preg_split("/((?<=[.?!]))(\s+(?=[a-z]))/i", $paragraph, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+
+		// Had to tweak this, I need a Regex Guru!
+		// 
+		$keep = '';
+
+		foreach($sentences as $sentence)
+		{
+			if(empty(trim($sentence)))
+			{
+				$keep = $sentence;
+			}
+			else
+			{
+				$return[] = $keep . $sentence;
+				$keep = '';
+			}
+		}
+
+		return $return;
 	}
 
 	/**
@@ -273,13 +292,18 @@ class SentenceBag implements Countable {
 	 */
 	public function joinSentences($property = 'sentence')
 	{
-		$sentences = array();
+		return $this->prefix . $this->implodeSentences($property) . $this->suffix;
+	}
+
+	public function implodeSentences($property)
+	{
+		$paragraph = '';
 
 		foreach($this->sentences as $key => $sentence)
 		{
-			$sentences[] = $sentence->getProperty($property, true);
+			$paragraph .= $sentence->getProperty($property, true);
 		}
 
-		return $this->prefix . implode($this->getDelimiter(), $sentences) . $this->suffix;
+		return $paragraph;
 	}
 }
