@@ -43,7 +43,7 @@ Glottos::translate('Laravel is a PHP Framework')
 
 Glottos::translate('Laravel is a PHP Framework. Laravel was written by Taylor Otwell.')
 
-// To not repeat itself, it will it will store those two sentences in your database:
+// To not repeat itself, it will store those two sentences in your database:
 
 'Laravel is a PHP Framework'
 'Laravel was written by Taylor Otwell'
