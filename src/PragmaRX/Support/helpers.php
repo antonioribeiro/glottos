@@ -27,7 +27,7 @@ if ( ! function_exists('kk'))
 }
 
 if ( ! function_exists('k'))
-
+{
 	function k($data)
 	{
 		echo "<pre>";
