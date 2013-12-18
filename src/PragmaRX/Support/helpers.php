@@ -24,6 +24,9 @@ if ( ! function_exists('kk'))
 		
 		die;
 	}
+}
+
+if ( ! function_exists('k'))
 
 	function k($data)
 	{
