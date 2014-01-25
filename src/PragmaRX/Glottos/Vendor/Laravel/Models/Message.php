@@ -24,6 +24,6 @@ class Message extends Eloquent {
 
 	protected $table = 'glottos_messages';
 
-	protected $guarded = array();
+	protected $fillable = array('hash', 'key');
 
 }
