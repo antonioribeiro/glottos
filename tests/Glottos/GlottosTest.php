@@ -305,11 +305,11 @@ class GlottosTest extends PHPUnit_Framework_TestCase {
 
 		$this->glottos->setLocale('pt-br');
 
-		$this->assertEquals($this->translatedChoiceSingular, $this->glottos->choice($this->choice, 0));
-
 		$this->assertEquals($this->translatedChoiceSingular, $this->glottos->choice($this->choice, 1));
 
 		$this->assertEquals($this->translatedChoicePlural, $this->glottos->choice($this->choice, 2));
+
+		$this->assertEquals($this->translatedChoicePlural, $this->glottos->choice($this->choice, 0));
 	}
 
 
