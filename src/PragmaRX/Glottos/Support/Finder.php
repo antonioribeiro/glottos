@@ -33,6 +33,16 @@ class Finder {
 	}
 
 	/**
+	 * Use create function
+	 * 
+	 * @return Symfony\Component\Finder\Finder
+	 */
+	public function create()
+	{
+		return new Finder();
+	}
+
+	/**
 	 * Use files selector
 	 * 
 	 * @return Symfony\Component\Finder\Finder
