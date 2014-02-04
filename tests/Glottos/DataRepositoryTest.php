@@ -223,6 +223,7 @@ class DataRepositoryTest extends PHPUnit_Framework_TestCase {
 		$this->fileSystem->shouldReceive('directories')->once()->andReturn(array('en'));
 		$this->fileSystem->shouldReceive('getRequire')->once()->andReturn(array('en'));
 
+		$this->finder->shouldReceive('create')->once()->andReturn($this->finder);
 		$this->finder->shouldReceive('files')->once()->andReturn($this->finder);
 		$this->finder->shouldReceive('in')->once()->andReturn(array('en'));
 

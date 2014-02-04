@@ -148,7 +148,7 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 			'select 
 			  (select count(*) from glottos_countries_languages where enabled = true) as languages
 			, (select count(*) from glottos_countries_languages) as total_languages
-			, (select count(*) from glottos_messages) as unique
+			, (select count(*) from glottos_messages) as messages 
 			, (select count(*) from glottos_translations) as translated
 
 			') );

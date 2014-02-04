@@ -199,7 +199,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function getEnabledLanguages()
 	{
-		return $this->localeRepository->getLanguages('enabled', '=', 'true');
+		return $this->localeRepository->getLanguages('enabled', '=', true);
 	}
 
 	/**
@@ -209,7 +209,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function getDisabledLanguages()
 	{
-		return $this->localeRepository->getLanguages('enabled', '=', 'false');
+		return $this->localeRepository->getLanguages('enabled', '=', false);
 	}
 
 	/**
@@ -324,7 +324,8 @@ class DataRepository implements DataRepositoryInterface {
 
 		$locale = Locale::make($locale);
 
-		foreach($this->finder->files()->in($path.'/'.$locale->getText()) as $file)
+		$finder = $this->finder->create();
+		foreach($finder->files()->in($path.'/'.$locale->getText()) as $file)
 		{
 			$values = $this->fileSystem->getRequire($file);
 
