@@ -324,7 +324,8 @@ class DataRepository implements DataRepositoryInterface {
 
 		$locale = Locale::make($locale);
 
-		foreach($this->finder->files()->in($path.'/'.$locale->getText()) as $file)
+		$finder = $this->finder->create();
+		foreach($finder->files()->in($path.'/'.$locale->getText()) as $file)
 		{
 			$values = $this->fileSystem->getRequire($file);
 
