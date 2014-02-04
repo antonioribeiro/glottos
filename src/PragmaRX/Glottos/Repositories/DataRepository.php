@@ -50,7 +50,8 @@ class DataRepository implements DataRepositoryInterface {
 									TranslationInterface $translation, 
 									LocaleRepositoryInterface $localeRepository, 
 									Config $config,
-									Filesystem $fileSystem
+									Filesystem $fileSystem,
+									Finder $finder
 								)
 	{
 		$this->message = $message;
@@ -62,6 +63,8 @@ class DataRepository implements DataRepositoryInterface {
 		$this->config = $config;
 
 		$this->fileSystem = $fileSystem;
+
+		$this->finder = $finder;
 	}
 
 	/**
@@ -321,8 +324,7 @@ class DataRepository implements DataRepositoryInterface {
 
 		$locale = Locale::make($locale);
 
-		$finder = new Finder();
-		foreach($finder->files()->in($path.'/'.$locale->getText()) as $file)
+		foreach($this->finder->files()->in($path.'/'.$locale->getText()) as $file)
 		{
 			$values = $this->fileSystem->getRequire($file);
 
