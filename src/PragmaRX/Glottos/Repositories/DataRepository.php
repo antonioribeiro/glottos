@@ -199,7 +199,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function getEnabledLanguages()
 	{
-		return $this->localeRepository->getLanguages('enabled', '=', 'true');
+		return $this->localeRepository->getLanguages('enabled', '=', true);
 	}
 
 	/**
@@ -209,7 +209,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function getDisabledLanguages()
 	{
-		return $this->localeRepository->getLanguages('enabled', '=', 'false');
+		return $this->localeRepository->getLanguages('enabled', '=', false);
 	}
 
 	/**
