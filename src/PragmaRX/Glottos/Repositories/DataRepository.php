@@ -331,15 +331,12 @@ class DataRepository implements DataRepositoryInterface {
 
 			$group = str_replace('.php', '', basename($file));
 
-			if ($group !== 'validation')
+			echo $file."\n";
+
+			if ( ! in_array($group, $this->config->get('do_not_import_groups')))
 			{
-				foreach($values as $key => $value)
-				{
-					if ($this->addKey($group, $key, $value, $domain, $locale, $mode))
-					{
-						$imported++;
-					}
-				}
+			echo "ENTERING!\n" ;
+				$imported += $this->addKey($group, '', $values, $domain, $locale, $mode);
 			}
 		}
 
@@ -358,6 +355,19 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	private function addKey($group, $key, $value, $domain, $locale, $mode)
 	{
+		$imported = 0;
+
+		if (is_array($value))
+		{
+			foreach($value as $subkey => $subvalue)
+			{
+				$keyName = $key . ($key ? '.' : '') . $subkey;
+
+				$imported += $this->addKey($group, $keyName, $subvalue, $domain, $locale, $mode);
+			}
+
+			return $imported;
+		}
 
 		$translation = Sentence::makeTranslation(
 												"key::$group.$key",
@@ -372,10 +382,10 @@ class DataRepository implements DataRepositoryInterface {
 		{
 			$this->addTranslation($translation, $locale);
 
-			return true;
+			return 1;
 		}
 
-		return false;
+		return 0;
 	}
 
 	
