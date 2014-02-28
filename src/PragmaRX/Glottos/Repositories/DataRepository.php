@@ -331,11 +331,8 @@ class DataRepository implements DataRepositoryInterface {
 
 			$group = str_replace('.php', '', basename($file));
 
-			echo $file."\n";
-
 			if ( ! in_array($group, $this->config->get('do_not_import_groups')))
 			{
-			echo "ENTERING!\n" ;
 				$imported += $this->addKey($group, '', $values, $domain, $locale, $mode);
 			}
 		}
