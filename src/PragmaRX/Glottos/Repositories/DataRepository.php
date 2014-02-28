@@ -335,9 +335,15 @@ class DataRepository implements DataRepositoryInterface {
 			{
 				foreach($values as $key => $value)
 				{
-					if ($this->addKey($group, $key, $value, $domain, $locale, $mode))
+					if ( ! is_array($value)) $value = array($value);
+					
+					foreach ($value as $stringValue)
 					{
-						$imported++;
+						if ($this->addKey($group, $key, $stringValue, $domain, $locale, $mode))
+						{
+							$imported++;
+						}
+
 					}
 				}
 			}
