@@ -237,6 +237,7 @@ class DataRepositoryTest extends PHPUnit_Framework_TestCase {
 		$this->config->shouldReceive('get')->with('default_language_id')->andReturn($this->language);
 		$this->config->shouldReceive('get')->with('default_country_id')->andReturn($this->country);
 		$this->config->shouldReceive('get')->with('debug')->andReturn(false);
+		$this->config->shouldReceive('get')->with('do_not_import_groups')->andReturn(array());
 
 		$this->dataRepository->import($this->app, null, $this->domain, $this->mode);
 	}
