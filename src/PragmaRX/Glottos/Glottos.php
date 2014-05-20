@@ -228,7 +228,9 @@ class Glottos
 
 	/**
 	 * Locale getter
-	 * 
+	 *
+	 * @param null $language
+	 * @param null $country
 	 * @return Locale
 	 */
 	public function getLocaleAsText($language = null, $country = null)
@@ -400,11 +402,12 @@ class Glottos
 
 	/**
 	 * Add a translation
-	 * 
-	 * @param string $message          
+	 *
+	 * @param string $message
 	 * @param string $translatedMessage
-	 * @param string $domain           
-	 * @param string $locale           
+	 * @param string $domain
+	 * @param string $locale
+	 * @return null|object|\PragmaRX\Glottos\Support\Sentence|string
 	 */
 	public function addTranslation($message, $translatedMessage, $domain = null, $locale = null)
 	{
@@ -616,11 +619,15 @@ class Glottos
 	/**
 	 * Get the browser default language
 	 *
-	 * @param string $defaultLanguage
+	 * @param null $defaultLocale
 	 * @return string
 	 */
-	public function getBrowserLanguage($defaultLanguage = 'en')
+	public function getBrowserLocale($defaultLocale = null)
 	{
-		return getDefaultLanguage($defaultLanguage);
+		$browserLocale = getDefaultLanguage(
+			$defaultLocale ?: $this->getLocaleAsText()
+		);
+
+		$this->dataRepository->findNearestAvailableLocale($browserLocale)->getText();
 	}
 }

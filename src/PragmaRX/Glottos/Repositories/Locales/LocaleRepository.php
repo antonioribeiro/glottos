@@ -119,14 +119,30 @@ class LocaleRepository implements LocaleRepositoryInterface {
 
 	/**
 	 * Create an add a Locale instance into a CountryLanguage object
-	 * 
-	 * @param object $locale 
+	 *
+	 * @param object $locale
+	 * @return object
 	 */
 	private function addLocaleObject( $locale )
 	{
 		if ( ! is_null($locale))
 		{
 			$locale->locale = new Locale($locale->language_id, $locale->country_id);
+		}
+
+		return $locale;
+	}
+
+	public function findNearest($locale)
+	{
+		$found = $this->find($locale);
+
+		if ( ! $found || ! $found->enabled)
+		{
+			if ($found = $this->countryLanguage->findEnabledByLanguage($locale->getLanguage()))
+			{
+				$locale = new Locale($found->language_id, $found->country_id);
+			}
 		}
 
 		return $locale;

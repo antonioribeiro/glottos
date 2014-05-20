@@ -155,4 +155,9 @@ class CountryLanguage extends LocaleBase implements CountryLanguageInterface {
 
 		return $rows;		
 	}
+
+	public function findEnabledByLanguage($language)
+	{
+		return $this->model->where('language_id', $language)->where('enabled', true)->first();
+	}
 }

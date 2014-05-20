@@ -342,13 +342,14 @@ class DataRepository implements DataRepositoryInterface {
 
 	/**
 	 * Add translation key to data repository
-	 * 
-	 * @param string $group  
-	 * @param string $key    
-	 * @param string $value  
-	 * @param string $domain 
-	 * @param string $locale 
-	 * @param string $mode   
+	 *
+	 * @param string $group
+	 * @param string $key
+	 * @param string $value
+	 * @param string $domain
+	 * @param string $locale
+	 * @param string $mode
+	 * @return int
 	 */
 	private function addKey($group, $key, $value, $domain, $locale, $mode)
 	{
@@ -385,5 +386,9 @@ class DataRepository implements DataRepositoryInterface {
 		return 0;
 	}
 
+	public function findNearestAvailableLocale($locale)
+	{
+		return $this->localeRepository->findNearest(Locale::make($locale));
+	}
 	
 }
