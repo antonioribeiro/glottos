@@ -593,8 +593,9 @@ class Glottos
 
 	/**
 	 * Secondary locale setter
-	 * 
+	 *
 	 * @param mixed $locale
+	 * @return mixed
 	 */
 	public function setSecondaryLocale($locale)
 	{
@@ -612,4 +613,14 @@ class Glottos
 		return $this->dataRepository->import($app, $path, $this->getDomain(), $this->getMode());
 	}
 
+	/**
+	 * Get the browser default language
+	 *
+	 * @param string $defaultLanguage
+	 * @return string
+	 */
+	public function getBrowserLanguage($defaultLanguage = 'en')
+	{
+		return getDefaultLanguage($defaultLanguage);
+	}
 }
