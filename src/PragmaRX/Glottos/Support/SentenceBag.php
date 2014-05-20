@@ -89,6 +89,8 @@ class SentenceBag implements Countable {
 		// Had to tweak this, I need a Regex Guru!
 		$keep = '';
 
+		$return = array();
+
 		foreach($sentences as $sentence)
 		{
 			if (trim($sentence) == '')
