@@ -628,6 +628,6 @@ class Glottos
 			$defaultLocale ?: $this->getLocaleAsText()
 		);
 
-		$this->dataRepository->findNearestAvailableLocale($browserLocale)->getText();
+		return $this->dataRepository->findNearestAvailableLocale($browserLocale)->getText();
 	}
 }
