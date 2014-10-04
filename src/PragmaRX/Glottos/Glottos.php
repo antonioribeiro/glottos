@@ -324,7 +324,7 @@ class Glottos
 	{
 		$this->paragraph->parseParagraph($paragraph, $domain);
 
-		foreach($this->paragraph->all() as $sentence)
+		foreach ($this->paragraph->all() as $sentence)
 		{
 			$sentence->setTranslation($this->findTranslation($sentence, $locale)->getTranslation());
 		}
@@ -376,7 +376,7 @@ class Glottos
 	 */
 	private function processReplacements($string, array $replacements = array())
 	{
-		foreach($replacements as $key => $variable) {
+		foreach ($replacements as $key => $variable) {
 			$string = $this->makeReplacement($key, $variable, $string);
 		}
 

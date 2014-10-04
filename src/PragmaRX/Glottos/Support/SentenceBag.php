@@ -67,7 +67,7 @@ class SentenceBag implements Countable {
 				$paragraph = $this->explodeParagraph($paragraph);
 			}
 
-			foreach($paragraph as $key => $sentence)
+			foreach ($paragraph as $key => $sentence)
 			{
 				$this->add( $this->parseSentence($sentence, $domain) );
 			}
@@ -91,7 +91,7 @@ class SentenceBag implements Countable {
 
 		$return = array();
 
-		foreach($sentences as $sentence)
+		foreach ($sentences as $sentence)
 		{
 			if (trim($sentence) == '')
 			{
@@ -279,7 +279,7 @@ class SentenceBag implements Countable {
 	{
 		$paragraph = '';
 
-		foreach($this->sentences as $key => $sentence)
+		foreach ($this->sentences as $key => $sentence)
 		{
 			$paragraph .= $sentence->getProperty($property, true);
 		}

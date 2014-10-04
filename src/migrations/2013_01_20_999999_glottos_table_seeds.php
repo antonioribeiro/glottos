@@ -498,7 +498,7 @@ class GlottosTableSeeds extends Migration {
 
 		// First insert all languages without country as regional languages
 
-		foreach($glottos_languages_rows as $language)
+		foreach ($glottos_languages_rows as $language)
 		{
 			if (! DB::table('glottos_countries_languages')->where('language_id', $language['id'])->where('country_id', '')->get())
 			{

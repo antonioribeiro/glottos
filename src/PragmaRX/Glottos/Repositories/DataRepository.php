@@ -301,7 +301,7 @@ class DataRepository implements DataRepositoryInterface {
 
 		$imported = 0;
 
-		foreach($locales as $locale)
+		foreach ($locales as $locale)
 		{
 			$imported += $this->importLocale(basename($locale), dirname($locale), $domain, $mode);
 		}
@@ -325,7 +325,7 @@ class DataRepository implements DataRepositoryInterface {
 		$locale = Locale::make($locale);
 
 		$finder = $this->finder->create();
-		foreach($finder->files()->in($path.'/'.$locale->getText()) as $file)
+		foreach ($finder->files()->in($path.'/'.$locale->getText()) as $file)
 		{
 			$values = $this->fileSystem->getRequire($file);
 
@@ -357,7 +357,7 @@ class DataRepository implements DataRepositoryInterface {
 
 		if (is_array($value))
 		{
-			foreach($value as $subkey => $subvalue)
+			foreach ($value as $subkey => $subvalue)
 			{
 				$keyName = $key . ($key ? '.' : '') . $subkey;
 
