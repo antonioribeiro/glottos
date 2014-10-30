@@ -52,7 +52,7 @@ class DataRepositoryTest extends PHPUnit_Framework_TestCase {
 		$this->language = 'en';
 		$this->country = 'us';
 		
-		$this->ptBr = 'pt-br';
+		$this->ptBr = 'pt_BR';
 
 		$this->record = new stdClass();          
 		$this->record->id = 1;

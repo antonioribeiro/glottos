@@ -150,7 +150,7 @@ class DataRepository implements DataRepositoryInterface {
 	 */
 	public function guessSecondaryLocale($primaryLocale)
 	{
-		return 'pt-br';
+		return 'pt_BR';
 	}
 
 	/**
