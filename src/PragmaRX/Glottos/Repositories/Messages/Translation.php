@@ -189,10 +189,14 @@ class Translation extends MessageBase implements TranslationInterface {
 	{
 		$db = $this->model->getConnection();
 
-		$query = "select id 
-					from glottos_messages 
-					where id||'".$localeSecondary->getLanguage()."'||'".$localeSecondary->getCountry()."' 
-					not in (select message_id||language_id||country_id from glottos_translations)";
+		$query = "SELECT id 
+					FROM glottos_messages m
+					WHERE NOT EXISTS (
+						SELECT id FROM glottos_translations t 
+						WHERE t.message_id = m.id 
+							and t.language_id = '".$localeSecondary->getLanguage()."' 
+							and t.country_id = '".$localeSecondary->getCountry()."'
+					)";
 
 		$rows = $db->select($db->raw($query));
 
