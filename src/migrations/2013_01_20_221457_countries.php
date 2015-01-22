@@ -16,7 +16,11 @@ class Countries extends Migration {
             $table->string('id',3)->primary();
 
             $table->string('name',64)->unique();
-            
+
+            $table->float('latitude')->nullable();
+
+            $table->float('longitude')->nullable();
+
             $table->timestamps();
         });
     }
