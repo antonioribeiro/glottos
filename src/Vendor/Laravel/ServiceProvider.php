@@ -25,6 +25,14 @@ use PragmaRX\Support\ServiceProvider as PragmaRXServiceProvider;
 
 class ServiceProvider extends PragmaRXServiceProvider {
 
+	protected $packageVendor = 'pragmarx';
+
+	protected $packageVendorCapitalized = 'PragmaRX';
+
+	protected $packageName = 'glottos';
+
+	protected $packageNameCapitalized = 'Glottos';
+
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *
@@ -33,27 +41,14 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	protected $defer = false;
 
 	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		$this->package('pragmarx/glottos', 'pragmarx/glottos', __DIR__.'/../../../..');
-
-		if ( $this->getConfig('create_glottos_alias') )
-		{
-			IlluminateAliasLoader::getInstance()->alias($this->getConfig('glottos_alias'), 'PragmaRX\Glottos\Vendor\Laravel\Facades\Glottos');
-		}
-	}
-
-	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
 	{
+		parent::register();
+
 		$this->registerFileSystem();
 
 		$this->registerConfig();
@@ -295,4 +290,12 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	{
 		return $this->app['config']["pragmarx/glottos::$key"];
 	}
+
+	public function getStubConfigPath()
+	{
+		$back = DIRECTORY_SEPARATOR.'..';
+
+		return __DIR__.$back.$back.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
+	}
+
 }
