@@ -32,8 +32,8 @@
             "src/migrations",
             "src/PragmaRX"
         ],
-        "psr-0": {
-            "PragmaRX\\Glottos": "src/"
+        "psr-4": {
+            "PragmaRX\\Glottos\\": "src/"
         },
         "files": [
             "src/PragmaRX/Support/helpers.php"
