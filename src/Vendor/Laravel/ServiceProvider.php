@@ -290,6 +290,11 @@ class ServiceProvider extends PragmaRXServiceProvider {
 		return $this->app['config']["pragmarx/glottos::$key"];
 	}
 
+	/**
+	 * Get the full path of the stub config file.
+	 *
+	 * @return string
+	 */
 	public function getStubConfigPath()
 	{
 		$back = DIRECTORY_SEPARATOR.'..';
