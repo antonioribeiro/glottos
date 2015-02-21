@@ -5,7 +5,6 @@ namespace PragmaRX\Glottos\Vendor\Laravel;
 use PragmaRX\Glottos\Glottos;
 use PragmaRX\Glottos\Support\Lang;
 use PragmaRX\Glottos\Support\Mode;
-use PragmaRX\Glottos\Support\Config;
 use PragmaRX\Glottos\Support\Locale;
 use PragmaRX\Glottos\Support\Finder;
 use PragmaRX\Glottos\Support\Filesystem;
@@ -50,8 +49,6 @@ class ServiceProvider extends PragmaRXServiceProvider {
 
 		$this->registerFileSystem();
 
-		$this->registerConfig();
-
 		$this->registerLocale();
 
 		$this->registerSentenceBag();
@@ -95,19 +92,6 @@ class ServiceProvider extends PragmaRXServiceProvider {
 		$this->app['glottos.fileSystem'] = $this->app->share(function($app)
 		{
 			return new Filesystem;
-		});
-	}
-
-	/**
-	 * Register the Config driver used by Glottos
-	 * 
-	 * @return void
-	 */
-	private function registerConfig()
-	{
-		$this->app['glottos.config'] = $this->app->share(function($app)
-		{
-			return new Config($app['glottos.fileSystem'], $app);
 		});
 	}
 
@@ -280,15 +264,13 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	}
 
 	/**
-	 * Get the full path of the stub config file.
+	 * Get the current package directory.
 	 *
 	 * @return string
 	 */
-	public function getStubConfigPath()
+	public function getPackageDir()
 	{
-		$back = DIRECTORY_SEPARATOR.'..';
-
-		return __DIR__.$back.$back.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
+		return __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..';
 	}
 
 }
