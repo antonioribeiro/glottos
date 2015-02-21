@@ -20,7 +20,6 @@ use PragmaRX\Glottos\Repositories\Messages\Translation;
 use PragmaRX\Glottos\Vendor\Laravel\Artisan\ImportCommand;
 use PragmaRX\Glottos\Repositories\Locales\CountryLanguage;
 use PragmaRX\Glottos\Repositories\Locales\LocaleRepository;
-use Illuminate\Foundation\AliasLoader as IlluminateAliasLoader;
 use PragmaRX\Support\ServiceProvider as PragmaRXServiceProvider;
 
 class ServiceProvider extends PragmaRXServiceProvider {
