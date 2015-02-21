@@ -35,7 +35,7 @@ use PragmaRX\Glottos\Repositories\Cache\Cache;
 use PragmaRX\Glottos\Support\Sentence;
 use PragmaRX\Glottos\Support\Locale;
 use PragmaRX\Glottos\Support\Mode;
-use PragmaRX\Glottos\Support\Config;
+use PragmaRX\Support\Config;
 use PragmaRX\Glottos\Support\Filesystem;
 
 class DataRepositoryTest extends PHPUnit_Framework_TestCase {
@@ -95,7 +95,7 @@ class DataRepositoryTest extends PHPUnit_Framework_TestCase {
 		$this->modelLanguageCountryReturnMock->language_id = $this->language;
 		$this->modelLanguageCountryReturnMock->country_id = $this->country;
 
-		$this->config = m::mock('PragmaRX\Glottos\Support\Config');
+		$this->config = m::mock('PragmaRX\Support\Config');
 
 		$this->cache = new Cache;
 
