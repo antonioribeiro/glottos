@@ -280,17 +280,6 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	}
 
 	/**
-	 * Helper function to ease the use of configurations
-	 * 
-	 * @param  string $key configuration key
-	 * @return string      configuration value
-	 */
-	public function getConfig($key)
-	{
-		return $this->app['config']["pragmarx/glottos::$key"];
-	}
-
-	/**
 	 * Get the full path of the stub config file.
 	 *
 	 * @return string
