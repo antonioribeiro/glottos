@@ -34,7 +34,7 @@ class SentenceTest extends PHPUnit_Framework_TestCase {
 
 		$this->messageHash = 'ba30988314732a172e215268110839619952c5a4'; /// for 'This is a string sentence0'
 
-		$this->config = m::mock('PragmaRX\Glottos\Support\Config');
+		$this->config = m::mock('PragmaRX\Support\Config');
 
 		$this->messageNatural = 'natural::'.$this->message;
 

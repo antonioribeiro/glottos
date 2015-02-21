@@ -22,7 +22,7 @@
 use PragmaRX\Glottos\Glottos;
 use PragmaRX\Glottos\Support\Locale;
 use PragmaRX\Glottos\Support\SentenceBag;
-use PragmaRX\Glottos\Support\Config;
+use PragmaRX\Support\Config;
 use Illuminate\Filesystem\Filesystem;
 use PragmaRX\Glottos\Repositories\Messages\Laravel\Message;
 use PragmaRX\Glottos\Support\Sentence;

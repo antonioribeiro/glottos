@@ -18,9 +18,10 @@
  * @link       http://pragmarx.com
  */
 
+use Countable;
+use PragmaRX\Support\Config;
 use PragmaRX\Glottos\Support\Sentence;
 use PragmaRX\Glottos\Support\Mode;
-use Countable;
 
 class SentenceBag implements Countable {
 

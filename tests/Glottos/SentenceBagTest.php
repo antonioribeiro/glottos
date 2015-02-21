@@ -19,8 +19,8 @@
  * @link       http://pragmarx.com
  */
 
+use PragmaRX\Support\Config;
 use PragmaRX\Glottos\Support\SentenceBag;
-use PragmaRX\Glottos\Support\Config;
 use PragmaRX\Glottos\Support\Filesystem;
 
 class SentenceBagTest extends PHPUnit_Framework_TestCase {

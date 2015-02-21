@@ -21,7 +21,7 @@
 use PragmaRX\Glottos\Support\Locale;
 use PragmaRX\Glottos\Support\SentenceBag;
 use PragmaRX\Glottos\Support\Sentence;
-use PragmaRX\Glottos\Support\Config;
+use PragmaRX\Support\Config;
 use PragmaRX\Glottos\Support\Mode;
 use PragmaRX\Glottos\Support\FileSystem;
 use PragmaRX\Glottos\Support\MessageSelector;
