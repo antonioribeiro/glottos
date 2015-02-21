@@ -1,31 +1,29 @@
-<?php namespace PragmaRX\Glottos\Vendor\Laravel;
+<?php
+
+namespace PragmaRX\Glottos\Vendor\Laravel;
 
 use PragmaRX\Glottos\Glottos;
-
-use PragmaRX\Glottos\Support\Locale;
-use PragmaRX\Glottos\Support\SentenceBag;
-use PragmaRX\Glottos\Support\Config;
-use PragmaRX\Glottos\Support\Mode;
-use PragmaRX\Glottos\Support\Filesystem;
-use PragmaRX\Glottos\Support\Finder;
-use PragmaRX\Glottos\Support\MessageSelector;
 use PragmaRX\Glottos\Support\Lang;
-
+use PragmaRX\Glottos\Support\Mode;
+use PragmaRX\Glottos\Support\Config;
+use PragmaRX\Glottos\Support\Locale;
+use PragmaRX\Glottos\Support\Finder;
+use PragmaRX\Glottos\Support\Filesystem;
+use PragmaRX\Glottos\Support\SentenceBag;
+use PragmaRX\Glottos\Support\MessageSelector;
+use PragmaRX\Glottos\Repositories\Cache\Cache;
 use PragmaRX\Glottos\Repositories\DataRepository;
+use PragmaRX\Glottos\Repositories\Locales\Country;
+use PragmaRX\Glottos\Repositories\Locales\Language;
 use PragmaRX\Glottos\Repositories\Messages\Message;
 use PragmaRX\Glottos\Repositories\Messages\Translation;
-use PragmaRX\Glottos\Repositories\Locales\LocaleRepository;
-use PragmaRX\Glottos\Repositories\Locales\Language;
-use PragmaRX\Glottos\Repositories\Locales\Country;
-use PragmaRX\Glottos\Repositories\Locales\CountryLanguage;
-use PragmaRX\Glottos\Repositories\Cache\Cache;
-
 use PragmaRX\Glottos\Vendor\Laravel\Artisan\ImportCommand;
-
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use PragmaRX\Glottos\Repositories\Locales\CountryLanguage;
+use PragmaRX\Glottos\Repositories\Locales\LocaleRepository;
 use Illuminate\Foundation\AliasLoader as IlluminateAliasLoader;
+use PragmaRX\Support\ServiceProvider as PragmaRXServiceProvider;
 
-class ServiceProvider extends IlluminateServiceProvider {
+class ServiceProvider extends PragmaRXServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
