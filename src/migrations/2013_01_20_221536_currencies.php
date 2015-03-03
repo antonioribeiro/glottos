@@ -20,6 +20,9 @@ class Currencies extends Migration {
             $table->string('symbol');
             $table->string('fractional_unit')->nullable();
             $table->string('number_to_basic')->nullable();
+	        $table->integer('decimals')->nullable();
+	        $table->string('decimal_point',3)->nullable();
+	        $table->string('thousands_separator',3)->nullable();
 
             $table->timestamps();
         });
