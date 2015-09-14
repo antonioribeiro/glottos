@@ -28,9 +28,6 @@
     },
 
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-4": {
             "PragmaRX\\Glottos\\": "src/"
         },
