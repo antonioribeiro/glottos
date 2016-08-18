@@ -20,7 +20,7 @@
         "illuminate/support": "~4|~5",
         "illuminate/filesystem": "~4|~5",
         "illuminate/console": "~4|~5",
-        "symfony/translation": "~2"
+        "symfony/translation": "~2|~3"
     },
 
     "require-dev": {
