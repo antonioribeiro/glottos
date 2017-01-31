@@ -89,8 +89,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerFileSystem()
 	{
-		$this->app['glottos.fileSystem'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.fileSystem', function($app) {
 			return new Filesystem;
 		});
 	}
@@ -102,8 +101,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerLocale()
 	{
-		$this->app['glottos.locale'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.locale', function($app) {
 			return new Locale($this->getConfig('default_language_id'), $this->getConfig('default_country_id'));
 		});
 	}
@@ -115,8 +113,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerSentenceBag()
 	{
-		$this->app['glottos.sentenceBag'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.sentenceBag', function($app) {
 			return new SentenceBag($this->app['glottos.config']);
 		});
 	}
@@ -128,8 +125,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerCache()
 	{
-		$this->app['glottos.cache'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.cache', function($app) {
 			return new Cache();
 		});
 	}
@@ -141,8 +137,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerDataRepository()
 	{
-		$this->app['glottos.dataRepository'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.dataRepository', function($app) {
 			$messageModel = $this->getConfig('message_model');
 
 			$translationModel = $this->getConfig('translation_model');
@@ -180,8 +175,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerMode()
 	{
-		$this->app['glottos.mode'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.mode', function($app) {
 			return new Mode($this->getConfig('mode'));
 		});
 	}
@@ -193,8 +187,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerMessageSelector()
 	{
-		$this->app['glottos.selector'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.selector', function($app) {
 			return new MessageSelector;
 		});
 	}
@@ -206,8 +199,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerFinder()
 	{
-		$this->app['glottos.finder'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.finder', function($app) {
 			return new Finder;
 		});
 	}
@@ -220,8 +212,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */
 	private function registerGlottos()
 	{
-		$this->app['glottos'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos', function($app) {
 			$app['glottos.loaded'] = true;
 
 			return new Glottos(
@@ -244,8 +235,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */	
 	private function registerLang()
 	{
-		$this->app['glottos.laravel.lang'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.laravel.lang', function($app) {
 			return new Lang($app['glottos']);
 		});
 	}
@@ -257,8 +247,7 @@ class ServiceProvider extends PragmaRXServiceProvider {
 	 */	
 	private function registerImportCommand()
 	{
-		$this->app['glottos.command.import'] = $this->app->share(function($app)
-		{
+		$this->app->singleton('glottos.command.import', function($app) {
 			return new ImportCommand;
 		});
 	}
